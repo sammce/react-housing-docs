@@ -11,7 +11,8 @@ const useStyles = makeStyles({
       textAlign: 'center',
     },
     sadIcon: {
-        fontSize: 50,
+        marginTop: '6px',
+        fontSize: 45,
     },
 });
 
@@ -27,7 +28,13 @@ const Error404 = props => {
       justify="center"
       alignItems="center">
 
-          <Grid className={classes.messageDiv} container item spacing={3}>
+          <Grid 
+          className={classes.messageDiv} 
+          container 
+          item 
+          spacing={2}
+          justify="center"
+          alignItems="center">
             <Grid item>
                 <h1>Page not found</h1> 
             </Grid>

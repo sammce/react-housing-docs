@@ -7,13 +7,13 @@ const useStyles = makeStyles({
     }
 })
 
-export default function Link({children, otherProps}){
+export default function Link(props){
 
     const classes = useStyles();
   
     return (
-        <RouteLink className={classes.link} {...otherProps}> 
-          {children}
+        <RouteLink className={classes.link} {...props}> 
+          {props.children}
         </RouteLink>
     )
   }

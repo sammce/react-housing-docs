@@ -5,9 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import {BrowserRouter as Router} from 'react-router-dom';
-import { StylesProvider } from '@material-ui/core/styles';
+import { StylesProvider, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 import ClassGen from './ClassGen';
+
+const theme = createMuiTheme({
+  palette: {
+    
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
