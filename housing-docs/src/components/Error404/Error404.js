@@ -4,10 +4,11 @@ import SentimentVeryDissatisfiedOutlinedIcon from '@material-ui/icons/SentimentV
 import Grid from '@material-ui/core/Grid';
 
 import Link from '../Link/Link';
+import PageSkeleton from '../PageSkeleton/PageSkeleton';
 
 const useStyles = makeStyles({
     errorDiv: {
-      minHeight: '80vh',
+      minHeight: '60vh',
       textAlign: 'center',
     },
     sadIcon: {
@@ -21,6 +22,7 @@ const Error404 = props => {
     const classes = useStyles();
   
     return (
+      <PageSkeleton toggleDark={props.toggleDark}>
       <Grid 
       className={classes.errorDiv} 
       container 
@@ -32,7 +34,7 @@ const Error404 = props => {
           className={classes.messageDiv} 
           container 
           item 
-          spacing={2}
+          spacing={1}
           justify="center"
           alignItems="center">
             <Grid item>
@@ -46,12 +48,12 @@ const Error404 = props => {
           </Grid>
 
           <Grid item>
-            <Link to="/"> 
-                <Button variant="contained" color="primary">Return to home page</Button>
+            <Link to="/" nounderline="true"> 
+                <Button variant="contained" color="secondary">Return to home page</Button>
             </Link>
           </Grid>
       </Grid>
-        // <h1>dwadwa</h1>
+      </PageSkeleton>
     )
 }
 

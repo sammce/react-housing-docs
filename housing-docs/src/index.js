@@ -4,29 +4,29 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { StylesProvider, createGenerateClassName } from '@material-ui/core/styles';
+
 import {BrowserRouter as Router} from 'react-router-dom';
-import { StylesProvider, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 import ClassGen from './ClassGen';
+const prefix = ClassGen();
 
-const theme = createMuiTheme({
-  palette: {
-    
-  }
+const generateClassName = createGenerateClassName({
+  productionPrefix: prefix,
 });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <StylesProvider generateClassName={ClassGen}>
+  // <React.StrictMode>
+    <StylesProvider generateClassName={generateClassName}>
       <Router>
         <App />
       </Router>
     </StylesProvider>
-  </React.StrictMode>,
+  // </React.StrictMode>
+  ,
   document.getElementById('root')
 );
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals(console.log);
